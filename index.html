@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aire Puro - Club de Montaña</title>
+
+    <!-- Enlace a la hoja de estilos CSS unificada -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Enlace a la librería de iconos Font Awesome (esencial para los iconos)  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+
+</head>
+<body>
+
+<!-- =================================================================== -->
+<!--                  SECCIÓN 1: CABECERA DE NAVEGACIÓN                  -->
+<!-- =================================================================== -->
+<header class="main-header">
+    <div class="container header-container">
+        
+        <a href="#" class="logo-container">
+            <img src="img/AP_logo.png" alt="Logo de Aire Puro" class="logo-img">
+            <span class="logo-text">Aire Puro</span>
+        </a>
+
+        <nav class="main-nav">
+            <ul class="nav-list">
+                <li class="nav-item"><a href="#" class="nav-link">Inicio</a></li>
+                <li class="nav-item"><a href="#proximas-actividades" class="nav-link">Próximas actividades</a></li>
+                <li class="nav-item dropdown-container">
+                    <a href="#secciones-deportivas" class="nav-link">Deportes <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Senderismo</a></li>
+                        <li><a href="#">Escalada</a></li>
+                        <li><a href="#">Andinismo</a></li>
+                        <li><a href="#">Trail Running</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a href="#nosotros" class="nav-link">Nosotros</a></li>
+                <li class="nav-item"><a href="#galeria" class="nav-link">Galería</a></li>
+                <li class="nav-item"><a href="#contacto" class="nav-link">Contacto</a></li>
+            </ul>
+        </nav>
+
+        <div class="social-icons">
+            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-tiktok"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+        </div>
+        
+        <button class="hamburger-button" id="hamburger-button">
+            <i class="fas fa-bars"></i>
+        </button>
+    </div>
+</header>
+
+<main>
+    <!-- =================================================================== -->
+    <!--             SECCIÓN 2: BANNER PRINCIPAL (HERO) CON SLIDESHOW        -->
+    <!-- =================================================================== -->
+    <section class="hero-section">
+        <div class="slideshow-container">
+            <div class="slide active" style="background-image: url('img/mont1.avif');"></div>
+            <div class="slide" style="background-image: url('img/mont2.avif');"></div>
+            <div class="slide" style="background-image: url('img/mont3.avif');"></div>
+            <div class="slide" style="background-image: url('img/mont4.avif');"></div>
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">NUESTRA PASIÓN ES LA MONTAÑA</h1>
+            <p class="hero-subtitle">¿Te apasiona el trekking, el montañismo o simplemente buscas una escapada diferente?</p>
+            <div class="hero-buttons">
+                <a href="#proximas-actividades" class="btn btn-primary">Próxima caminata</a>
+                <a href="#secciones-deportivas" class="btn btn-secondary">Nuestras actividades</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- =================================================================== -->
+    <!--            SECCIÓN 3: "PRÓXIMAS ACTIVIDADES"                        -->
+    <!-- =================================================================== -->
+    <section class="activities-section" id="proximas-actividades">
+        <div class="container">
+            <div class="section-header">
+                <p class="eyebrow">Nuestro Blog de Aventuras</p>
+                <h2 class="section-title">Próximas Actividades</h2>
+                <div class="title-divider"></div>
+                <p class="section-subtitle">Descubre nuestras futuras salidas y prepárate para la próxima gran aventura.</p>
+            </div>
+            <div class="activities-grid">
+                <article class="activity-card">
+                    <div class="card-image-container">
+                        <img src="img/act1.jpg" alt="Campamento bajo las estrellas">
+                        <div class="date-tag">6 Jul, 2025</div>
+                    </div>
+                    <div class="card-content">
+                        <h3><a href="#">Noche de vivac y estrellas fugaces</a></h3>
+                        <div class="card-meta">
+                            <span><i class="fas fa-user"></i> Responsable: Ricardo Rivadeneira</span>
+                            <span><i class="fas fa-calendar-alt"></i> 6 de julio 2025</span>
+                        </div>
+                        <p>Una noche mágica para aprender a orientarse con las estrellas y disfrutar del cielo nocturno lejos de la ciudad.</p>
+                        <a href="#" class="btn-read-more">Leer Más</a>
+                    </div>
+                </article>
+                <article class="activity-card">
+                    <div class="card-image-container">
+                        <img src="img/act2.jpg" alt="Persona haciendo kayak en un río">
+                        <div class="date-tag">19 Jul, 2025</div>
+                    </div>
+                    <div class="card-content">
+                        <h3><a href="#">Descenso en Kayak por el Río Bravo</a></h3>
+                        <div class="card-meta">
+                            <span><i class="fas fa-user"></i> Responsable: Ricardo Rivadeneira</span>
+                            <span><i class="fas fa-calendar-alt"></i> 19 de julio 2025</span>
+                        </div>
+                        <p>Una emocionante ruta acuática de nivel intermedio, perfecta para los amantes de la adrenalina y la naturaleza.</p>
+                        <a href="#" class="btn-read-more">Leer Más</a>
+                    </div>
+                </article>
+                <article class="activity-card">
+                    <div class="card-image-container">
+                        <img src="img/act3.jpg" alt="Familia caminando por un sendero en el bosque">
+                        <div class="date-tag">28-31 Jul, 2025</div>
+                    </div>
+                    <div class="card-content">
+                        <h3><a href="#">Senderismo Familiar: Ruta de los Puentes</a></h3>
+                        <div class="card-meta">
+                            <span><i class="fas fa-user"></i> Responsable: Ricardo Rivadeneira</span>
+                            <span><i class="fas fa-calendar-alt"></i> 28-31 de julio 2025</span>
+                        </div>
+                        <p>Una actividad perfecta para todas las edades. Descubre la historia y la flora local en una caminata accesible y divertida.</p>
+                        <a href="#" class="btn-read-more">Leer Más</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- =================================================================== -->
+    <!--         SECCIÓN 4: "SECCIONES DEPORTIVAS"                           -->
+    <!-- =================================================================== -->
+    <section class="services-section" id="secciones-deportivas">
+        <div class="container">
+            <div class="section-header">
+                <p class="eyebrow">Nuestras Disciplinas</p>
+                <h2 class="section-title">Secciones Deportivas</h2>
+                <div class="title-divider"></div>
+                <p class="section-subtitle">Explora las disciplinas que ofrecemos y encuentra tu pasión en la montaña.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="card-image-container">
+                        <img src="img/dep1.jpg" alt="Persona haciendo senderismo">
+                        <div class="card-icon">
+                            <i class="fas fa-hiking"></i>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Senderismo</h3>
+                        <p>Descubre rutas increíbles y paisajes que te dejarán sin aliento, aptas para todos los niveles.</p>
+                        <a href="#" class="btn-read-more">
+                            Leer Más <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="card-image-container">
+                        <img src="img/dep2.jpg" alt="Persona escalando una roca">
+                        <div class="card-icon">
+                            <i class="fas fa-mountain-sun"></i>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Escalada en roca</h3>
+                        <p>Supera tus límites y alcanza nuevas alturas con nuestros cursos y salidas de escalada guiadas.</p>
+                        <a href="#" class="btn-read-more">
+                            Leer Más <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="card-image-container">
+                        <img src="img/dep3.jpg" alt="Montañista en la cima de una montaña nevada">
+                        <div class="card-icon">
+                            <i class="fas fa-mountain"></i>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Andinismo</h3>
+                        <p>Para los más aventureros, expediciones a las cumbres más desafiantes con la máxima seguridad.</p>
+                        <a href="#" class="btn-read-more">
+                            Leer Más <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =================================================================== -->
+    <!--         SECCIÓN 5: "NOSOTROS" (SECCIÓN INTERACTIVA)                 -->
+    <!-- =================================================================== -->
+    <section class="interactive-section" id="nosotros">
+        <div class="container">
+            <div class="section-header">
+                <p class="eyebrow">Nuestra Esencia</p>
+                <h2 class="section-title">Sobre Nosotros</h2>
+                <div class="title-divider"></div>
+                <p class="section-subtitle">Conoce la misión, visión y valores que impulsan cada una de nuestras aventuras.</p>
+            </div>
+            <div class="main-grid">
+                <div class="content-panel">
+                    <div class="eyebrow-container">
+                        <p class="eyebrow-alt">Asociación de Deportes de Montaña</p>
+                        <div class="background-text">Aire Puro</div>
+                    </div>
+                    <div class="tabs-slider">
+                        <div class="tabs-track">
+                            <h2 class="tab-title active" data-target="quienes">Quienes Somos</h2>
+                            <h2 class="tab-title" data-target="vision">Visión</h2>
+                            <h2 class="tab-title" data-target="valores">Valores</h2>
+                        </div>
+                    </div>
+                    <div class="descriptions-wrapper">
+                        <p class="description-text active" data-id="quienes">
+                        Somos una asociación sin fines de lucro formada por amigos, quienes compatimos el gusto por la aventura y el respeto por las montañas. Nacimos en Lima, Perú, en las aulas de la PUCP y poco a poco fuimos convocando a más personas de distintos centros de estudios y centros de labores.
+                        <br><br>Desde nuestros inicios, creemos que la montaña es un espacio de encuentro, superación personal y conexión profunda con el entorno natural. Por eso, organizamos actividades abiertas al público, capacitaciones para nuestros socios y eventos de servicio comunitario en zonas altoandinas.
+                        
+                        </p>
+                        <p class="description-text" data-id="vision">
+                            Ser una comunidad referente en el Perú en la práctica responsable de los deportes de montaña, fomentando el crecimiento personal, la conciencia ambiental y la integración social a través de experiencias transformadoras en la naturaleza.
+                        <br><br>Aspiramos a construir un espacio inclusivo, seguro y comprometido, donde cada persona encuentre en la montaña no solo un reto físico, sino una oportunidad para reconectar con uno mismo, con los demás y con el entorno.
+                        </p>
+                        <p class="description-text" data-id="valores">
+                         En el Club de Montaña Aire Puro valoramos profundamente el respeto por la naturaleza, la seguridad en cada travesía y el compañerismo entre quienes compartimos la pasión por la montaña. Promovemos la inclusión, el aprendizaje constante y la conexión con el entorno andino de manera consciente y sostenible.
+                        <br><br> Nos guía el compromiso con las comunidades que visitamos, el trabajo en equipo y la responsabilidad individual en cada ruta. Creemos que la montaña no solo se recorre con los pies, sino también con el corazón, el respeto y el deseo de crecer juntos.
+                        </p>
+                    </div>
+                </div>
+                <div class="image-gallery-wrapper">
+                    <div class="image-cloud active" id="gallery-quienes">
+                        <img src="img/nos1.jpg" alt="Equipo trabajando en una misión" class="img-1">
+                        <img src="img/nos2.jpg" alt="Comunidad unida" class="img-2">
+                    </div>
+                    <div class="image-cloud" id="gallery-vision">
+                        <img src="img/nos3.jpg" alt="Visión de futuro" class="img-1">
+                        <img src="img/nos4.jpg" alt="Paisaje inspirador" class="img-2">
+                    </div>
+                    <div class="image-cloud" id="gallery-valores">
+                        <img src="img/nos5.jpg" alt="Compañerismo" class="img-1">
+                        <img src="img/nos6.jpg" alt="Respeto por la naturaleza" class="img-2">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =================================================================== -->
+    <!--          SECCIÓN 6: "GALERÍA" (CARRUSEL Y LIGHTBOX)                 -->
+    <!-- =================================================================== -->
+    <section class="portfolio-section" id="galeria">
+        <div class="container">
+            <div class="section-header">
+                <p class="eyebrow">Momentos Inolvidables</p>
+                <h2 class="section-title">Nuestra Galería</h2>
+                <div class="title-divider"></div>
+                <p class="section-subtitle">
+                    Un vistazo a las experiencias, paisajes y la camaradería de nuestras aventuras.
+                </p>
+            </div>
+            <div class="carousel-container">
+                <div class="carousel-wrapper">
+                    <div class="carousel-track" id="carousel-track">
+                        
+                        <div class="project-card">
+                            <div class="card-image-container">
+                                <img src="img/gal1.jpg" alt="Aventura de senderismo">
+                                <div class="image-overlay">
+                                    <a href="#" class="overlay-icon open-lightbox" data-index="0" title="Ver imagen"><i class="fas fa-search-plus"></i></a>
+                                </div>
+                            </div>
+                            <div class="card-content">
+                                <div class="card-text">
+                                    <p class="project-category">Senderismo</p>
+                                    <h3 class="project-title">Cumbre del Ranrapalca</h3>
+                                </div>
+                                <a href="#" class="arrow-button"><i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+        
+                        <div class="project-card">
+                             <div class="card-image-container">
+                                <img src="img/gal2.jpg" alt="Escalada en roca">
+                                <div class="image-overlay">
+                                    <a href="#" class="overlay-icon open-lightbox" data-index="1" title="Ver imagen"><i class="fas fa-search-plus"></i></a>
+                                </div>
+                            </div>
+                            <div class="card-content">
+                                <div class="card-text">
+                                    <p class="project-category">Senderismo</p>
+                                    <h3 class="project-title">Vista desde el glaciar Chuecón</h3>
+                                </div>
+                                <a href="#" class="arrow-button"><i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+        
+                        <div class="project-card">
+                             <div class="card-image-container">
+                                <img src="img/gal3.jpg" alt="Expedición de andinismo">
+                                <div class="image-overlay">
+                                    <a href="#" class="overlay-icon open-lightbox" data-index="2" title="Ver imagen"><i class="fas fa-search-plus"></i></a>
+                                </div>
+                            </div>
+                            <div class="card-content">
+                                <div class="card-text">
+                                    <p class="project-category">Senderismo</p>
+                                    <h3 class="project-title">Camino al glaciar Chuecón</h3>
+                                </div>
+                                <a href="#" class="arrow-button"><i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                             <div class="card-image-container">
+                                <img src="img/gal4.jpg" alt="Expedición de andinismo">
+                                <div class="image-overlay">
+                                    <a href="#" class="overlay-icon open-lightbox" data-index="3" title="Ver imagen"><i class="fas fa-search-plus"></i></a>
+                                </div>
+                            </div>
+                            <div class="card-content">
+                                <div class="card-text">
+                                    <p class="project-category">Senderismo</p>
+                                    <h3 class="project-title">Bosque de Queñuales Japaní</h3>
+                                </div>
+                                <a href="#" class="arrow-button"><i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+						
+                        <div class="project-card">
+                             <div class="card-image-container">
+                                <img src="img/gal5.jpg" alt="Expedición de andinismo">
+                                <div class="image-overlay">
+                                    <a href="#" class="overlay-icon open-lightbox" data-index="4" title="Ver imagen"><i class="fas fa-search-plus"></i></a>
+                                </div>
+                            </div>
+                            <div class="card-content">
+                                <div class="card-text">
+                                    <p class="project-category">Senderismo</p>
+                                    <h3 class="project-title">Espejos de agua en Marcahuasi</h3>
+                                </div>
+                                <a href="#" class="arrow-button"><i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>						
+        
+                        <div class="project-card">
+                             <div class="card-image-container">
+                                <img src="img/gal6.jpg" alt="Campamento nocturno">
+                                <div class="image-overlay">
+                                    <a href="#" class="overlay-icon open-lightbox" data-index="5" title="Ver imagen"><i class="fas fa-search-plus"></i></a>
+                                </div>
+                            </div>
+                            <div class="card-content">
+                                <div class="card-text">
+                                    <p class="project-category">Senderismo</p>
+                                    <h3 class="project-title">Yanacocha</h3>
+                                </div>
+                                <a href="#" class="arrow-button"><i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="carousel-button prev" id="prev-button"><i class="fas fa-arrow-left"></i></button>
+                <button class="carousel-button next" id="next-button"><i class="fas fa-arrow-right"></i></button>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- =================================================================== -->
+<!--                SECCIÓN 7: "CONTACTO"                                -->
+<!-- =================================================================== -->
+<section class="contact-section" id="contacto">
+    <div class="container">
+        <header class="section-header">
+            <p class="eyebrow">Ponte en Marcha</p>
+            <h2 class="section-title">Contáctanos</h2>
+            <div class="title-divider"></div>
+            <p class="section-subtitle">Estamos aquí para ayudarte. No dudes en escribirnos o visitarnos.</p>
+        </header>
+        <div class="contact-grid">
+            <div class="contact-column">
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <div class="contact-details">
+                        <h4>Dirección</h4>
+                        <p>Lima, Perú</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                    <div class="contact-details">
+                        <h4>Teléfono</h4>
+                        <p>WhatsApp: +51 972 071 278</p>
+                    </div>
+                </div>
+                <a href="#" class="btn btn-contact">Enviar Mensaje</a>
+            </div>
+            <div class="contact-column">
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                    <div class="contact-details">
+                        <h4>Email</h4>
+                        <p>airepuro@airepuro.org</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fas fa-share-alt"></i></div>
+                    <div class="contact-details">
+                        <h4>Redes Sociales</h4>
+                        <div class="card-social-icons">
+                            <a href="#" class="social-icon-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="social-icon-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-icon-link" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                            <a href="#" class="social-icon-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <a href="#" class="btn btn-contact btn-outline">Hazte Socio</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- =================================================================== -->
+<!--         SECCIÓN 8: "FOOTER" (PIE DE PÁGINA)                         -->
+<!-- =================================================================== -->
+<footer class="main-footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3 class="footer-logo">Aire Puro</h3>
+                <p class="footer-description">Promoviendo el amor por la montaña y la naturaleza. Un club abierto a todos los aventureros.</p>
+                <div class="footer-social-links">
+                    <a href="#" class="footer-social-link"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="footer-social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="footer-social-link"><i class="fab fa-tiktok"></i></a>
+                    <a href="#" class="footer-social-link"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4 class="footer-title">Enlaces Rápidos</h4>
+                <div class="footer-links-grid">
+                    <ul class="footer-links">
+                        <li><a href="#">Inicio</a></li>
+                        <li><a href="#proximas-actividades">Actividades</a></li>
+                        <li><a href="#secciones-deportivas">Deportes</a></li>
+                    </ul>
+                    <ul class="footer-links">
+                        <li><a href="#nosotros">Sobre Nosotros</a></li>
+                        <li><a href="#galeria">Galería</a></li>
+                        <li><a href="#">Hazte Socio</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4 class="footer-title">Información del Club</h4>
+                <p class="footer-info-text">Club de Montaña Aire Puro | Lima - Perú</p>
+                <p class="footer-info-text">RUC: 12345678900 | Asociación inscrita en SUNARP.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Aire Puro Club. Todos los derechos reservados.</p>
+        </div>
+    </div>
+</footer>
+
+<!-- Estructura del Lightbox para la Galería -->
+<div class="lightbox-container" id="gallery-lightbox">
+    <div class="lightbox-overlay"></div>
+    <div class="lightbox-content">
+        <div class="lightbox-header">
+            <div class="lightbox-title"></div>
+            <button class="lightbox-close" title="Cerrar (Esc)">×</button>
+        </div>
+        <div class="lightbox-body">
+            <button class="lightbox-nav prev" title="Anterior (flecha izquierda)"><i class="fas fa-chevron-left"></i></button>
+            <img src="" alt="Imagen de la galería" class="lightbox-image">
+            <button class="lightbox-nav next" title="Siguiente (flecha derecha)"><i class="fas fa-chevron-right"></i></button>
+        </div>
+        <div class="lightbox-footer">
+            <div class="lightbox-counter"></div>
+        </div>
+    </div>
+</div>
+
+<!-- Enlace al archivo JavaScript unificado -->
+<script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,262 @@
+/* ===================================================== */
+/*      FUENTES Y VARIABLES DE COLOR (PALETA DEFINIDA)     */
+/* ===================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+:root {
+    --color-primary: #E67E22;
+    --color-secondary: #4A5C43;
+    --color-text-dark: #343A40;
+    --color-text-muted: #6c757d;
+    --color-text-light: #ffffff;
+    --color-bg-main: #FDFBF6;
+    --color-bg-light: #ffffff;
+    --color-bg-alt: #f9f9f9;
+    --color-footer-bg: #111827;
+    --color-footer-text: #9ca3af;
+    --color-header-bg: rgba(255, 255, 255, 0.85);
+    --color-border: #DEE2E6;
+    --font-family: 'Poppins', sans-serif;
+    --transition-speed: 0.3s;
+}
+
+/* ===================================================== */
+/*                 ESTILOS GENERALES                     */
+/* ===================================================== */
+html { scroll-behavior: smooth; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: var(--font-family); background-color: var(--color-bg-main); color: var(--color-text-dark); }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+/* ===================================================== */
+/*          SECCIÓN 1: ESTILOS DE LA CABECERA            */
+/* ===================================================== */
+.main-header { position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; background-color: var(--color-header-bg); backdrop-filter: blur(8px); box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); }
+.header-container { display: flex; justify-content: space-between; align-items: center; height: 80px; }
+.logo-container { display: flex; align-items: center; text-decoration: none; }
+.logo-img { height: 50px; width: 50px; margin-right: 10px; border-radius: 50%; }
+.logo-text { font-size: 1.5rem; font-weight: 700; color: var(--color-text-dark); }
+.nav-list { display: flex; list-style: none; gap: 25px; }
+.nav-link { color: var(--color-text-dark); text-decoration: none; font-weight: 600; padding: 10px 0; position: relative; transition: color var(--transition-speed); }
+.nav-link::after { content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 2px; background-color: var(--color-primary); transform: scaleX(0); transform-origin: right; transition: transform var(--transition-speed) ease-out; }
+.nav-link:hover { color: var(--color-primary); }
+.nav-link:hover::after { transform: scaleX(1); transform-origin: left; }
+.dropdown-container { position: relative; }
+.dropdown-menu { position: absolute; top: 100%; left: 0; background-color: white; list-style: none; border-radius: 8px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); width: 200px; padding: 10px 0; opacity: 0; visibility: hidden; transform: translateY(10px); transition: all var(--transition-speed) ease; }
+.dropdown-container:hover .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+.dropdown-menu a { display: block; padding: 12px 20px; color: var(--color-text-dark); text-decoration: none; transition: all var(--transition-speed); }
+.dropdown-menu a:hover { background-color: var(--color-primary); color: var(--color-text-light); }
+.social-icons { display: flex; gap: 15px; }
+.social-link { color: var(--color-text-dark); font-size: 1.2rem; transition: all var(--transition-speed); }
+.social-link:hover { color: var(--color-primary); transform: scale(1.2); }
+.hamburger-button { display: none; }
+
+/* ===================================================== */
+/*          SECCIÓN 2: ESTILOS DEL BANNER HERO           */
+/* ===================================================== */
+@keyframes kenburns { 0% { transform: scale(1.05) translateX(-20px); } 50% { transform: scale(1.08) translateX(20px); } 100% { transform: scale(1.05) translateX(-20px); } }
+.hero-section { height: 100vh; position: relative; display: flex; justify-content: center; align-items: center; text-align: center; color: var(--color-text-light); overflow: hidden; }
+.slideshow-container { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; }
+.slide { position: absolute; width: 100%; height: 100%; background-size: cover; background-position: center; opacity: 0; z-index: 1; animation: kenburns 20s infinite ease-in-out; transition: opacity 1.5s ease-in-out; }
+.slide.active { opacity: 1; z-index: 2; }
+.hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.4); z-index: 3; }
+.hero-content { position: relative; z-index: 4; }
+.hero-title { font-size: 4rem; font-weight: 700; text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5); margin-bottom: 20px; }
+.hero-subtitle { font-size: 1.2rem; max-width: 600px; margin: 0 auto 40px auto; text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5); }
+.btn { padding: 15px 30px; border-radius: 50px; text-decoration: none; font-weight: 600; margin: 0 10px; transition: all var(--transition-speed) ease; border: 2px solid transparent; }
+.btn-primary { background-color: var(--color-primary); color: var(--color-text-light); border-color: var(--color-primary); }
+.btn-primary:hover { background-color: transparent; color: var(--color-primary); }
+.btn-secondary { background-color: transparent; color: var(--color-text-light); border-color: var(--color-text-light); }
+.btn-secondary:hover { background-color: var(--color-text-light); color: var(--color-text-dark); }
+
+/* ===================================================== */
+/*    ESTILOS DE ENCABEZADOS DE SECCIÓN (UNIFICADOS)     */
+/* ===================================================== */
+.section-header { text-align: center; margin-bottom: 60px; }
+.section-header .eyebrow { color: var(--color-primary); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
+.section-header .section-title { color: var(--color-text-dark); font-size: 2.8rem; font-weight: 700; margin-bottom: 15px; }
+.section-header .section-subtitle { font-size: 1.1rem; color: var(--color-text-muted); max-width: 600px; margin: 0 auto; }
+.section-header .title-divider { width: 60px; height: 4px; border-radius: 2px; margin: 0 auto 20px; background: linear-gradient(90deg, var(--color-primary), #F8C471, var(--color-primary)); background-size: 200% 100%; animation: divider-shine 4s ease-in-out infinite alternate; }
+@keyframes divider-shine { from { background-position: 100% 0; } to { background-position: -100% 0; } }
+
+/* ===================================================== */
+/*        SECCIÓN 3: ESTILOS DE "PRÓXIMAS ACTIVIDADES"   */
+/* ===================================================== */
+.activities-section { padding: 100px 0; background-color: var(--color-bg-light); }
+.activities-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+.activity-card { background-color: var(--color-bg-light); border-radius: 12px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); overflow: hidden; }
+.activity-card .card-image-container { position: relative; overflow: hidden; }
+.activity-card .card-image-container img { width: 100%; height: 250px; object-fit: cover; display: block; transition: transform var(--transition-speed) ease; }
+.activity-card:hover .card-image-container img { transform: scale(1.05); }
+.date-tag { position: absolute; top: 20px; left: -100%; background-color: rgba(0, 0, 0, 0.7); color: white; padding: 8px 15px; font-weight: 600; border-radius: 0 5px 5px 0; transition: left var(--transition-speed) ease-in-out; }
+.activity-card:hover .date-tag { left: 0; }
+.activity-card .card-content { padding: 25px; }
+.activity-card .card-content h3 a { font-size: 1.4rem; color: var(--color-text-dark); text-decoration: none; font-weight: 700; transition: color var(--transition-speed) ease; }
+.activity-card:hover .card-content h3 a { color: var(--color-primary); }
+.card-meta { display: flex; gap: 20px; font-size: 0.9rem; margin: 15px 0; color: var(--color-text-muted); }
+.card-meta i { margin-right: 5px; color: var(--color-primary); }
+.activity-card .card-content p { line-height: 1.7; margin-bottom: 25px; }
+.activity-card .btn-read-more { display: inline-block; background-color: transparent; color: var(--color-text-dark); padding: 10px 20px; border: 2px solid var(--color-border); border-radius: 8px; text-decoration: none; font-weight: 600; transition: all var(--transition-speed) ease; }
+.activity-card:hover .btn-read-more { background-color: var(--color-primary); color: white; border-color: var(--color-primary); }
+
+/* ===================================================== */
+/*        SECCIÓN 4: ESTILOS DE "SECCIONES DEPORTIVAS"     */
+/* ===================================================== */
+.services-section { padding: 100px 0; background-color: var(--color-bg-alt); }
+.services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+.service-card { background-color: var(--color-bg-light); border-radius: 20px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); overflow: hidden; transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease; }
+.service-card:hover { transform: translateY(-10px); box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1); }
+.service-card .card-image-container { position: relative; }
+.service-card .card-image-container img { width: 100%; height: 250px; object-fit: cover; display: block; transition: transform var(--transition-speed) ease; }
+.service-card:hover .card-image-container img { transform: scale(1.1); }
+.card-icon { position: absolute; right: 25px; bottom: -30px; width: 60px; height: 60px; background-color: var(--color-bg-light); border-radius: 50%; border: 3px solid var(--color-primary); display: flex; justify-content: center; align-items: center; color: var(--color-primary); font-size: 1.5rem; transition: all var(--transition-speed) ease; }
+.service-card:hover .card-icon { background-color: var(--color-primary); color: var(--color-bg-light); transform: rotate(15deg); }
+.service-card .card-content { padding: 40px 25px 25px 25px; }
+.service-card .card-content h3 { font-size: 1.5rem; color: var(--color-text-dark); font-weight: 600; margin-bottom: 15px; }
+.service-card .card-content p { color: var(--color-text-muted); line-height: 1.7; margin-bottom: 25px; }
+.service-card .btn-read-more { display: inline-block; background-color: var(--color-primary); color: var(--color-text-light); padding: 12px 25px; border-radius: 50px; text-decoration: none; font-weight: 500; transition: all var(--transition-speed) ease; }
+.service-card .btn-read-more:hover { background-color: var(--color-text-dark); }
+.service-card .btn-read-more .fa-arrow-right { margin-left: 8px; transition: transform var(--transition-speed) ease; }
+.service-card .btn-read-more:hover .fa-arrow-right { transform: translateX(5px); }
+
+/* ===================================================== */
+/*        SECCIÓN 5: ESTILOS DE "NOSOTROS" (INTERACTIVA) */
+/* ===================================================== */
+.interactive-section { padding: 100px 0; background-color: var(--color-bg-light); overflow: hidden; }
+.main-grid { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 60px; min-height: 70vh; }
+.image-gallery-wrapper { position: relative; width: 100%; height: 500px; }
+.image-cloud { position: absolute; width: 100%; height: 100%; opacity: 0; transition: opacity 1.2s cubic-bezier(0.65, 0, 0.35, 1); }
+.image-cloud.active { opacity: 1; }
+.image-cloud img { position: absolute; border-radius: 12px; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25); max-width: 380px; animation: float-animation 20s infinite ease-in-out alternate; }
+.image-cloud .img-1 { top: 5%; left: 0%; transform: rotate(-5deg); animation-delay: -5s; }
+.image-cloud .img-2 { top: 25%; right: 5%; transform: rotate(8deg); animation-delay: 0s; }
+@keyframes float-animation { 0% { transform: translateY(20px) rotate(-5deg); } 100% { transform: translateY(-20px) rotate(5deg); } }
+.content-panel { display: flex; flex-direction: column; justify-content: center; height: 100%; position: relative; overflow: hidden; }
+.eyebrow-container { position: relative; padding-bottom: 2rem; overflow: visible; }
+.eyebrow-alt { color: var(--color-secondary); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; position: relative; z-index: 2; }
+.background-text { position: absolute; top: 50%; left: 0; transform: translateY(-50%); font-size: 7.5rem; font-weight: 900; line-height: 1; white-space: nowrap; z-index: 1; pointer-events: none; background: linear-gradient(90deg, rgba(230, 126, 34, 0.05), rgba(230, 126, 34, 0.15), rgba(230, 126, 34, 0.05)); background-size: 200% auto; color: #000; background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: background-shine 8s linear infinite alternate; }
+@keyframes background-shine { to { background-position: -200% center; } }
+.tabs-slider { position: relative; width: 100%; overflow: hidden; z-index: 2; }
+.tabs-track { display: flex; justify-content: flex-end; }
+.tab-title { font-size: 2rem; font-weight: 700; color: var(--color-text-muted); cursor: pointer; margin: 0 10px; white-space: nowrap; transition: color 0.5s, opacity 0.5s, font-size 0.8s cubic-bezier(0.65, 0, 0.35, 1); }
+.tab-title.active { font-size: 2.5rem; color: var(--color-text-dark); opacity: 1; }
+.tab-title:not(.active) { opacity: 0.5; }
+.tab-title:not(.active):hover { color: var(--color-primary); opacity: 1; }
+.descriptions-wrapper { position: relative; min-height: 150px; margin-top: 20px; z-index: 2; }
+.description-text { position: absolute; width: 100%; font-size: 1.1rem; color: var(--color-text-muted); line-height: 1.6; opacity: 0; transition: opacity 1.2s cubic-bezier(0.65, 0, 0.35, 1); }
+.description-text.active { opacity: 1; }
+
+/* ===================================================== */
+/*        SECCIÓN 6: ESTILOS DE "GALERÍA"                */
+/* ===================================================== */
+.portfolio-section { padding: 100px 0; background-color: var(--color-bg-alt); }
+.carousel-container { position: relative; }
+.carousel-wrapper { position: relative; overflow: hidden; }
+.carousel-track { display: flex; transition: transform 0.5s ease-in-out; }
+.project-card { flex: 0 0 calc(33.333% - 20px); margin: 0 10px; background-color: var(--color-bg-light); border-radius: 12px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+.project-card .card-image-container { position: relative; cursor: pointer; }
+.project-card .card-image-container img { width: 100%; height: 280px; object-fit: cover; display: block; }
+.image-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(230, 126, 34, 0.7); display: flex; justify-content: center; align-items: center; opacity: 0; transition: opacity var(--transition-speed) ease; }
+.project-card:hover .image-overlay { opacity: 1; }
+.overlay-icon { color: white; background-color: rgba(255, 255, 255, 0.2); width: 50px; height: 50px; border-radius: 50%; display: flex; justify-content: center; align-items: center; text-decoration: none; font-size: 1.2rem; transform: scale(0.8); opacity: 0; transition: all 0.3s ease; }
+.project-card:hover .overlay-icon { transform: scale(1); opacity: 1; }
+.overlay-icon:hover { background-color: var(--color-primary); }
+.project-card .card-content { padding: 25px; display: flex; justify-content: space-between; align-items: center; }
+.project-category { color: var(--color-text-muted); font-size: 0.9rem; }
+.project-title { color: var(--color-text-dark); font-size: 1.3rem; font-weight: 600; margin: 0; }
+.arrow-button { width: 50px; height: 50px; border-radius: 50%; background-color: white; color: var(--color-primary); display: flex; justify-content: center; align-items: center; text-decoration: none; font-size: 1.2rem; flex-shrink: 0; margin-left: 15px; transition: all var(--transition-speed) ease; }
+.project-card:hover .arrow-button { background-color: var(--color-primary); color: white; transform: rotate(360deg); }
+.carousel-button { position: absolute; top: 40%; transform: translateY(-50%); background-color: rgba(255, 255, 255, 0.9); border: none; border-radius: 50%; width: 50px; height: 50px; font-size: 1.5rem; color: var(--color-text-dark); cursor: pointer; box-shadow: 0 2px 10px rgba(0,0,0,0.1); transition: all 0.3s ease; z-index: 10; }
+.carousel-button:hover { background-color: var(--color-primary); color: white; }
+.carousel-button.prev { left: -25px; }
+.carousel-button.next { right: -25px; }
+.carousel-button:disabled { background-color: #e9ecef; color: #adb5bd; cursor: not-allowed; transform: translateY(-50%) scale(0.95); }
+.lightbox-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 9999; display: flex; justify-content: center; align-items: center; visibility: hidden; opacity: 0; transition: visibility 0s 0.4s, opacity 0.4s ease; }
+.lightbox-container.visible { visibility: visible; opacity: 1; transition-delay: 0s; }
+.lightbox-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(25, 25, 25, 0.85); backdrop-filter: blur(5px); }
+.lightbox-content { position: relative; background-color: var(--color-bg-light); padding: 15px; border-radius: 8px; max-width: 90vw; max-height: 90vh; display: flex; flex-direction: column; box-shadow: 0 10px 40px rgba(0,0,0,0.5); transform: scale(0.9); transition: transform 0.4s ease; }
+.lightbox-container.visible .lightbox-content { transform: scale(1); }
+.lightbox-header { display: flex; justify-content: space-between; align-items: center; padding-bottom: 10px; border-bottom: 1px solid var(--color-border); color: var(--color-text-dark); }
+.lightbox-title { font-weight: 600; }
+.lightbox-close { background: none; border: none; font-size: 2rem; line-height: 1; color: var(--color-text-muted); cursor: pointer; transition: color 0.3s ease; }
+.lightbox-close:hover { color: var(--color-primary); }
+.lightbox-body { flex-grow: 1; position: relative; display: flex; justify-content: center; align-items: center; padding: 10px 0; }
+.lightbox-image { max-width: 100%; max-height: calc(90vh - 120px); object-fit: contain; display: block; opacity: 1; transition: opacity 0.3s ease; }
+.lightbox-image.fade-out { opacity: 0; }
+.lightbox-nav { position: absolute; top: 50%; transform: translateY(-50%); background-color: rgba(30, 30, 30, 0.5); color: white; border: none; border-radius: 50%; width: 44px; height: 44px; font-size: 1.2rem; cursor: pointer; display: flex; justify-content: center; align-items: center; transition: background-color 0.3s ease; }
+.lightbox-nav:hover { background-color: var(--color-primary); }
+.lightbox-nav.prev { left: 25px; }
+.lightbox-nav.next { right: 25px; }
+.lightbox-footer { padding-top: 10px; text-align: center; color: var(--color-text-muted); font-size: 0.9rem; }
+
+/* ===================================================== */
+/*        SECCIÓN 7: ESTILOS DE "CONTACTO"               */
+/* ===================================================== */
+.contact-section { padding: 100px 0; background-color: var(--color-bg-light); }
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: stretch; }
+.contact-column { background-color: var(--color-bg-alt); padding: 30px; border-radius: 15px; display: flex; flex-direction: column; }
+.contact-item { display: flex; align-items: flex-start; padding: 15px; margin-bottom: 15px; border-radius: 10px; transition: all var(--transition-speed); }
+.contact-item:hover { background-color: var(--color-bg-light); transform: translateX(10px); box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+.contact-icon { font-size: 1.3rem; color: var(--color-secondary); margin-right: 15px; min-width: 25px; transition: all var(--transition-speed); padding-top: 5px; }
+.contact-item:hover .contact-icon { color: var(--color-primary); transform: rotate(-15deg) scale(1.1); }
+.contact-details h4 { color: var(--color-text-dark); font-size: 1rem; margin-bottom: 2px; }
+.contact-details p { color: var(--color-text-muted); font-size: 0.9rem; line-height: 1.4; }
+.btn-contact { background-color: var(--color-primary); color: white; padding: 12px 30px; border-radius: 50px; text-decoration: none; font-weight: 600; display: inline-block; margin-top: auto; align-self: flex-start; transition: all var(--transition-speed); border: 2px solid var(--color-primary); }
+.btn-contact:hover { background-color: #d35400; border-color: #d35400; transform: translateY(-3px); box-shadow: 0 5px 15px rgba(230, 126, 34, 0.4); }
+.btn-contact.btn-outline { background-color: transparent; color: var(--color-primary); }
+.btn-contact.btn-outline:hover { background-color: rgba(230, 126, 34, 0.1); border-color: var(--color-primary); }
+.card-social-icons { display: flex; gap: 10px; margin-top: 5px; }
+.social-icon-link { font-size: 1rem; color: var(--color-secondary); text-decoration: none; width: 40px; height: 40px; border-radius: 50%; background-color: rgba(0, 0, 0, 0.05); display: flex; justify-content: center; align-items: center; transition: all var(--transition-speed); }
+.social-icon-link:hover { background-color: var(--color-primary); color: white; transform: translateY(-5px) scale(1.1); }
+
+/* ===================================================== */
+/*        SECCIÓN 8: ESTILOS DE "FOOTER"                 */
+/* ===================================================== */
+.main-footer { background-color: var(--color-footer-bg); color: var(--color-footer-text); padding: 60px 0 20px 0; }
+.footer-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-bottom: 40px; }
+.footer-col h3, .footer-col h4 { color: white; font-weight: 600; margin-bottom: 20px; }
+.footer-logo { font-size: 1.8rem; }
+.footer-description { line-height: 1.7; margin-bottom: 20px; }
+.footer-info-text { line-height: 1.7; }
+.footer-social-links { display: flex; gap: 10px; }
+.footer-social-link { width: 35px; height: 35px; display: flex; justify-content: center; align-items: center; color: white; background-color: rgba(255, 255, 255, 0.1); border-radius: 50%; text-decoration: none; transition: all var(--transition-speed); }
+.footer-social-link:hover { background-color: var(--color-primary); transform: translateY(-3px); }
+.footer-links-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.footer-links { list-style: none; padding: 0; }
+.footer-links li { margin-bottom: 12px; }
+.footer-links a { color: var(--color-footer-text); text-decoration: none; transition: all var(--transition-speed); }
+.footer-links a:hover { color: var(--color-primary); padding-left: 5px; }
+.footer-bottom { text-align: center; padding-top: 20px; border-top: 1px solid rgba(255, 255, 255, 0.1); font-size: 0.9rem; }
+
+/* ===================================================== */
+/*                 DISEÑO RESPONSIVE (MÓVIL)             */
+/* ===================================================== */
+@media (max-width: 992px) {
+    .main-nav, .social-icons { display: none; }
+    .hamburger-button { display: block; background: none; border: none; color: var(--color-text-dark); font-size: 1.8rem; cursor: pointer; }
+    .hero-title { font-size: 2.5rem; }
+    .hero-buttons { display: flex; flex-direction: column; gap: 15px; }
+    .activities-grid, .services-grid { grid-template-columns: repeat(2, 1fr); }
+    .main-grid { grid-template-columns: 1fr; }
+    .content-panel, .eyebrow-container { text-align: center; align-items: center; }
+    .tabs-track { justify-content: center; }
+    .image-gallery-wrapper { height: 400px; margin-top: 40px; }
+    .background-text { font-size: 6.5rem; left: 50%; transform: translate(-50%, -50%); }
+    .project-card { flex-basis: calc(50% - 20px); }
+    .footer-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 768px) {
+    .activities-grid, .services-grid, .contact-grid, .footer-grid { grid-template-columns: 1fr; }
+    .section-header .section-title { font-size: 2.2rem; }
+    .image-cloud img { max-width: 280px; }
+    .background-text { font-size: 5rem; }
+    .project-card { flex-basis: calc(100% - 20px); }
+    .carousel-button.prev { left: 10px; }
+    .carousel-button.next { right: 10px; }
+}
+@media (max-width: 576px) {
+    .image-gallery-wrapper, .background-text { display: none; }
+    .tab-title { font-size: 1.8rem; margin: 0 5px;}
+    .tab-title.active { font-size: 2rem; }
+    .footer-links-grid { grid-template-columns: 1fr; }
+}
